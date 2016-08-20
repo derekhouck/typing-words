@@ -2,16 +2,6 @@ jQuery( document ).ready(function( $) {
 	//Variables
 	var words = [];
 
-	// Choosing colors
-	function randomColor() {
-        var color;
-        color = Math.floor(Math.random() * 0x1000000); // integer between 0x0 and 0xFFFFFF
-        color = color.toString(16); // convert to hex
-        color = ("000000" + color).slice(-6); // pad with leading zeros
-        color = "#" + color; // prepend #
-        return color;
-    }
-
 	function invertCssColor(color) {
         var rgb = invertColor(hexColor2rgb(color));
         return rgb2hexColor(rgb);
@@ -100,4 +90,10 @@ jQuery( document ).ready(function( $) {
 				selectWord()
 			}, 5000);
 		});
+	
+	// Toggle full screen mode
+	$("body").click(function() {
+		toggleFullScreen();
+	});
+	
 });
